@@ -38,6 +38,8 @@ import aiofiles
 import zipfile
 import shutil
 import ffmpeg
+from utils import save_user, get_all_users
+from vars import OWNER
 
 # Initialize the bot
 bot = Client(
@@ -91,12 +93,26 @@ async def add_auth_user(client: Client, message: Message):
         await message.reply_text("Please provide a valid user ID.")
 
 @bot.on_message(filters.command("users") & filters.private)
-async def list_auth_users(client: Client, message: Message):
+async def list_all_users(client: Client, message: Message):
     if message.chat.id != OWNER:
-        return await message.reply_text("You are not authorized to use this command.")
-    
-    user_list = '\n'.join(map(str, get_all_user_ids()))  # Get user IDs from MongoDB
-    await message.reply_text(f"Authorized Users:\n{user_list}")
+        return await message.reply_text("❌ You are not authorized to use this command.")
+
+    users = get_all_users()
+    if not users:
+        return await message.reply_text("🙁 कोई भी user नहीं मिला!")
+
+    user_list = ""
+    for u in users:
+        username = u.get("username")
+        user_id = u.get("id")
+        if username:
+            user_list += f"@{username}\n"
+        else:
+            user_list += f"User ID: {user_id}\n"
+
+    await message.reply_text(
+        f"👥 Total Users: {len(users)}\n\n{user_list}"
+    )
 
 @bot.on_message(filters.command("rmauth") & filters.private)
 async def remove_auth_user(client: Client, message: Message):
@@ -388,6 +404,8 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command("start"))
 async def start(bot, m: Message):
+    from_user = m.from_user
+    save_user(from_user)
     user = await bot.get_me()
     mention = user.mention
     start_message = await bot.send_message(
