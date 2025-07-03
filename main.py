@@ -59,20 +59,19 @@ photozip = 'https://envs.sh/cD_.jpg'
 
 
 # Inline keyboard for start command
-BUTTONSCONTACT = InlineKeyboardMarkup([[InlineKeyboardButton(text="📞 Contact", url="https://t.me/saini_contact_bot")]])
+BUTTONSCONTACT = InlineKeyboardMarkup([[InlineKeyboardButton(text="🌸 Contact", url="https://t.me/Lallantoop")]])
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="🛠️ Help", url="https://t.me/+3k-1zcJxINYwNGZl"),
-            InlineKeyboardButton(text="🛠️ Repo", url="https://github.com/nikhilsainiop/saini-txt-direct"),
+            InlineKeyboardButton(text="🌸 Help", url="https://t.me/Lallantoop"),
+            InlineKeyboardButton(text="🌸 Repo", url="https://t.me/Lallantoop"),
         ],
     ]
 )
 
 # Image URLs for the random image feature
 image_urls = [
-    "https://tinypic.host/images/2025/02/07/IMG_20250207_224444_975.jpg",
-    "https://tinypic.host/images/2025/02/07/DeWatermark.ai_1738952933236-1.png",
+    "https://envs.sh/Qt9.jpg/IMG20250621443.jpg",
     # Add more image URLs as needed
 ]
 
@@ -383,7 +382,7 @@ async def restart_handler(_, m):
             f"__**Your User id** __- `{m.chat.id}`</blockquote>\n\n"
         )
     else:
-        await m.reply_text("🚦**STOPPED**🚦", True)
+        await m.reply_text("🌸**𝕊𝕋𝕆ℙℙ𝔼𝔻**🌸", True)
         os.execl(sys.executable, sys.executable, *sys.argv)
         
 
@@ -510,34 +509,34 @@ async def info(bot: Client, update: Message):
 @bot.on_message(filters.command(["help"]))
 async def txt_handler(client: Client, m: Message):
     await bot.send_message(m.chat.id, text= (
-        f"💥 𝐁𝐎𝐓𝐒 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒\n"
-        f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n" 
-        f"📌 𝗠𝗮𝗶𝗻 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀:\n\n"  
-        f"➥ /start – Bot Status Check\n"
-        f"➥ /drm – Extract from .txt (Auto)\n"
-        f"➥ /y2t – YouTube → .txt Converter\n"  
-        f"➥ /ytm – YT .txt → .mp3 downloader\n"  
-        f"➥ /yt2m – YT link → .mp3 downloader\n"  
-        f"➥ /t2t – Text → .txt Generator\n" 
-        f"➥ /stop – Cancel Running Task\n"
-        f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰ \n" 
-        f"⚙️ 𝗧𝗼𝗼𝗹𝘀 & 𝗦𝗲𝘁𝘁𝗶𝗻𝗴𝘀: \n\n" 
-        f"➥ /cookies – Update YT Cookies\n" 
-        f"➥ /id – Get Chat/User ID\n"  
-        f"➥ /info – User Details\n"  
-        f"➥ /logs – View Bot Activity\n"
-        f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-        f"👤 𝐔𝐬𝐞𝐫 𝐀𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐜𝐚𝐭𝐢𝐨𝐧: **(OWNER)**\n\n" 
-        f"➥ /addauth xxxx – Add User ID\n" 
-        f"➥ /rmauth xxxx – Remove User ID\n"  
-        f"➥ /users – Total User List\n"  
-        f"▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-        f"💡 𝗡𝗼𝘁𝗲:\n\n"  
-        f"• Send any link for auto-extraction\n"  
-        f"• Supports batch processing\n\n"  
-        f"╭────────⊰◆⊱────────╮\n"   
-        f" ➠ 𝐌𝐚𝐝𝐞 𝐁𝐲 : {CREDIT} 💻\n"
-        f"╰────────⊰◆⊱────────╯\n"
+        f"•─∘❉𝐁𝐎𝐓𝐒 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒❉∘─•\n"
+        f" ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢\n" 
+        f"🌸 𝗠𝗮𝗶𝗻 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀:\n\n"  
+        f"➤ /start – Bot Status Check\n"
+        f"➤ /drm – Extract from .txt (Auto)\n"
+        f"➤ /y2t – YouTube → .txt Converter\n"  
+        f"➤ /ytm – YT .txt → .mp3 downloader\n"  
+        f"➤ /yt2m – YT link → .mp3 downloader\n"  
+        f"➤ /t2t – Text → .txt Generator\n" 
+        f"➤ /stop – Cancel Running Task\n"
+        f" ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢\n" 
+        f"🌸 𝗧𝗼𝗼𝗹𝘀 & 𝗦𝗲𝘁𝘁𝗶𝗻𝗴𝘀: \n\n" 
+        f"➤ /cookies – Update YT Cookies\n" 
+        f"➤ /id – Get Chat/User ID\n"  
+        f"➤ /info – User Details\n"  
+        f"➤ /logs – View Bot Activity\n"
+        f" ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢\n"
+        f"🌸 𝐔𝐬𝐞𝐫 𝐀𝐮𝐭𝐡𝐞𝐧𝐭𝐢𝐜𝐚𝐭𝐢𝐨𝐧: **(OWNER)**\n\n" 
+        f"➤ /addauth xxxx – Add User ID\n" 
+        f"➤ /rmauth xxxx – Remove User ID\n"  
+        f"➤ /users – Total User List\n"  
+        f" ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢\n"
+        f"🌸 𝗡𝗼𝘁𝗲:\n\n"  
+        f"❁ Send any link for auto-extraction\n"  
+        f"❁ Supports batch processing\n\n"  
+        f"╭────⬦┅┅┅⊰✰⊱┅┅┅┅⬦───╮\n"   
+        f" ➠ 𝐌𝐚𝐝𝐞 𝐁𝐲 : {CREDIT} \n"
+        f"╰────⬦┅┅┅⊰✰⊱┅┅┅┅⬦───╯\n"
         )
     )                    
           
