@@ -5,6 +5,22 @@ import os #NIKHIL SAINI BOTS
 from vars import CREDIT #NIKHIL SAINI BOTS
 from pyrogram.errors import FloodWait #NIKHIL SAINI BOTS
 from datetime import datetime,timedelta #NIKHIL SAINI BOTS
+from pymongo import MongoClient
+from vars import MONGO_URI, DB_NAME, COLLECTION_NAME
+
+client = MongoClient(MONGO_URI)
+db = client[DB_NAME]
+collection = db[COLLECTION_NAME]
+
+def save_user(user):
+    if not collection.find_one({"id": user.id}):
+        collection.insert_one({
+            "id": user.id,
+            "username": user.username or f"NO_USERNAME_{user.id}"
+        })
+
+def get_all_users():
+    return list(collection.find())
 
 class Timer: #NIKHIL SAINI BOTS
     def __init__(self, time_between=5): #NIKHIL SAINI BOTS
